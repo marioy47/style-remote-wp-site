@@ -1,0 +1,26 @@
+{
+	"name": "style-remote-wp-site",
+	"version": "1.0.0",
+	"description": "This is a development tool that allow you to preview CSS and JS changes, done by local files, on remote sites.",
+	"main": "gulpfile.js",
+	"scripts": {
+		"lint:css": "wp-scripts lint-style 'scss/**/*.scss'",
+		"lint:js": "wp-scripts lint-js 'js/**/*.js'",
+		"lint:md": "markdownlint lint-md-docs '*.md'",
+		"lint": "run-p lint:*",
+		"format:css": "wp-scripts lint-style 'scss/**/*.scss' --fix",
+		"format:js": "wp-scripts lint-js 'js/**/*.js' --fix",
+		"format:md": "markdownlint '*.md' --fix",
+		"format": "run-p format:*",
+		"build:bundle-js": "gulp bundle"
+	},
+	"keywords": [],
+	"author": "Mario Yepes <https://marioyepes.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"@wordpress/scripts": "^26.5.0",
+		"gulp": "^4.0.2",
+		"npm-run-all": "^4.1.5",
+		"webpack-stream": "^7.0.0"
+	}
+}
