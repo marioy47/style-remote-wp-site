@@ -5,8 +5,9 @@
 	"main": "gulpfile.js",
 	"scripts": {
 		"lint:css": "wp-scripts lint-style 'scss/**/*.scss'",
-		"lint:js": "wp-scripts lint-js 'js/**/*.js'",
+		"lint:js": "wp-scripts lint-js './*.js' 'js/**/*.js'",
 		"lint:md": "markdownlint lint-md-docs '*.md'",
+		"lint:spell": "cspell *",
 		"lint": "run-p lint:*",
 		"format:css": "wp-scripts lint-style 'scss/**/*.scss' --fix",
 		"format:js": "wp-scripts lint-js 'js/**/*.js' --fix",
@@ -22,6 +23,7 @@
 		"@wordpress/scripts": "^26.5.0",
 		"autoprefixer": "^10.4.14",
 		"browser-sync": "^2.29.3",
+		"cspell": "^6.31.1",
 		"gulp": "^4.0.2",
 		"gulp-postcss": "^9.0.1",
 		"gulp-prettier": "^4.0.0",
