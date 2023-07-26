@@ -8,5 +8,12 @@ module.exports = {
 		'dist/',
 		'node_modules/**',
 	],
-	words: [ 'commitlint', 'gulpfile', 'huskyrc', 'browserlist', 'yepes' ],
+	words: [
+		'commitlint',
+		'gulpfile',
+		'huskyrc',
+		'browserlist',
+		'yepes',
+		'elementor',
+	],
 };
