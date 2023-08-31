@@ -9,11 +9,12 @@ module.exports = {
 		'node_modules/**',
 	],
 	words: [
+		'browserlist',
 		'commitlint',
+		'elementor',
 		'gulpfile',
 		'huskyrc',
-		'browserlist',
+		'stylelint',
 		'yepes',
-		'elementor',
 	],
 };
