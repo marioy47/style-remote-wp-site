@@ -5,7 +5,7 @@ module.exports = {
 		'.git/',
 		'.gitignore',
 		'.vscode/**', // Otherwise VSCode package names will give errors.
-		'dist/',
+		'dist/**',
 		'node_modules/**',
 	],
 	words: [

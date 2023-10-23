@@ -13,6 +13,9 @@
 		"format:js": "wp-scripts lint-js 'js/**/*.js' --fix",
 		"format:md": "markdownlint '*.md' --fix",
 		"format": "run-p format:*",
+		"format-dist:css": "wp-scripts lint-style 'dist/css/*.css' --fix",
+		"format-dist:js": "wp-scripts lint-js 'dist/js/*.js' --fix",
+		"format-dist": "run-p format-dist:*",
 		"start": "gulp watch",
 		"build": "gulp build",
 		"postinstall": "husky install"
