@@ -27,7 +27,7 @@
 		"@wordpress/scripts": "^26.5.0",
 		"autoprefixer": "^10.4.14",
 		"browser-sync": "^2.29.3",
-		"cspell": "^6.31.1",
+		"cspell": "^8.8.4",
 		"gulp": "^4.0.2",
 		"gulp-postcss": "^9.0.1",
 		"gulp-prettier": "^4.0.0",
