@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "This is a development tool that allow you to preview CSS and JS changes, done by local files, on remote sites.",
 	"main": "gulpfile.js",
+	"type": "module",
 	"scripts": {
 		"lint:css": "wp-scripts lint-style 'scss/**/*.scss'",
 		"lint:js": "wp-scripts lint-js './*.js' 'js/**/*.js'",

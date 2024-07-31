@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	'*.scss': 'npm run format:css',
 	'*.js': 'npm run format:js',
 	'*.md': 'npm run format:md',
