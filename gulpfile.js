@@ -1,22 +1,24 @@
 // gulpfile.js
-const { src, dest, watch, series } = require( 'gulp' );
-const path = require( 'path' );
-const webpackStream = require( 'webpack-stream' );
-const sass = require( 'gulp-sass' )( require( 'sass' ) );
-const bs = require( 'browser-sync' );
-const autoprefixer = require( 'autoprefixer' );
-const postcss = require( 'gulp-postcss' );
-const prettier = require( 'gulp-prettier' );
+import { src, dest, watch, series } from 'gulp';
+import path from 'path';
+import webpackStream from 'webpack-stream';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass( dartSass );
+import bs from 'browser-sync';
+import autoprefixer from 'autoprefixer';
+import postcss from 'gulp-postcss';
+import prettier from 'gulp-prettier';
 
 // Modify WordPress webpack. Change the output dir to dist/ and the name of the start file
-const wpWebpackConfig = require( '@wordpress/scripts/config/webpack.config' );
+import wpWebpackConfig from '@wordpress/scripts/config/webpack.config.js';
 const localWebpackConfig = {
 	...wpWebpackConfig,
 	entry: {
 		'js/scripts': './js/scripts.js',
 	},
 	output: {
-		path: path.resolve( __dirname, 'dist' ),
+		path: path.resolve( import.meta.dirname, 'dist' ),
 		filename: '[name].js',
 	},
 };
@@ -67,8 +69,9 @@ const look = () => {
 	watch( './js/**/*.js', jsBundle );
 };
 
-// Export function so gulp can execute them.
-exports.bundle = jsBundle;
-exports.scss = scss;
-exports.watch = look;
-exports.build = series( jsBundle, scss );
+const build = series( jsBundle, scss );
+
+export { jsBundle as bundle };
+export { scss as scss };
+export { look as watch };
+export { build as build };
