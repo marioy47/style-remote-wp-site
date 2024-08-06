@@ -8,6 +8,7 @@ export default {
 		'cspell.config.js',
 		'dist/**',
 		'node_modules/**',
+		'src/scss/*', // Most CSS source code ignores any kind of spelling
 	],
 	words: [
 		'browserlist',
@@ -15,6 +16,7 @@ export default {
 		'elementor',
 		'gulpfile',
 		'huskyrc',
+		'nvim',
 		'stylelint',
 		'yepes',
 	],
