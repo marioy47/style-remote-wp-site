@@ -15,7 +15,7 @@ import wpWebpackConfig from '@wordpress/scripts/config/webpack.config.js';
 const localWebpackConfig = {
 	...wpWebpackConfig,
 	entry: {
-		'js/scripts': './js/scripts.js',
+		'js/scripts': './src/js/scripts.js',
 	},
 	output: {
 		path: path.resolve( import.meta.dirname, 'dist' ),
@@ -27,7 +27,7 @@ const localWebpackConfig = {
  * Bundle JavaScript files into a single scripts.js file
  */
 const jsBundle = () => {
-	return src( './js/scripts.js' )
+	return src( './src/js/scripts.js' )
 		.pipe( webpackStream( localWebpackConfig ) ) // Use WordPress webpack
 		.pipe( dest( './dist/' ) );
 };
@@ -36,7 +36,7 @@ const jsBundle = () => {
  * Compile SCSS into a single styles.css file
  */
 const scss = () => {
-	return src( './scss/**/*.scss' )
+	return src( './src/scss/**/*.scss' )
 		.pipe( sass().on( 'error', sass.logError ) )
 		.pipe( postcss( [ autoprefixer( { browserlist: [ '> 1%' ] } ) ] ) )
 		.pipe( prettier() )
@@ -65,8 +65,8 @@ const look = () => {
 		],
 	} );
 
-	watch( './scss/**/*.scss', scss );
-	watch( './js/**/*.js', jsBundle );
+	watch( './src/scss/**/*.scss', scss );
+	watch( './src/js/**/*.js', jsBundle );
 };
 
 const build = series( jsBundle, scss );
